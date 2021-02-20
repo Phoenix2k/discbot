@@ -1,6 +1,6 @@
 import { Consola } from 'consola';
-import { logger } from './logger';
 import { Name } from './types';
+import { logger } from './utils/logger';
 
 export class Discbot {
   public name: Name;
