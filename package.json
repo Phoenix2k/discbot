@@ -6,11 +6,33 @@
   "description": "Discord bot based on Discord.js",
   "devDependencies": {
     "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "node-notifier": "^9.0.0",
     "rollup": "^2.39.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier",
+      "prettier/@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "root": true
   },
   "homepage": "https://github.com/Phoenix2k/discbot#readme",
   "keywords": [
@@ -23,6 +45,13 @@
   "license": "MIT",
   "main": "dist/index.mjs",
   "name": "discbot",
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  },
   "private": true,
   "repository": {
     "type": "git",
@@ -31,6 +60,8 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "dev": "ts-node-dev --notify --respawn src/index.ts",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
     "start": "node dist/index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

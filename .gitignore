@@ -10,3 +10,4 @@ dist
 # Exceptions
 !.editorconfig
 !.gitignore
+!.vscode

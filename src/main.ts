@@ -6,7 +6,8 @@ export class Discbot {
     this.name = name;
   }
 
-  init() {
+  init(): void {
     console.log(this.name, 'initialized.');
+    return;
   }
 }
