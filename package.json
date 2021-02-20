@@ -69,8 +69,8 @@
     "url": "git+https://github.com/Phoenix2k/discbot.git"
   },
   "scripts": {
-    "build": "rm -rf dist && rollup -c",
-    "dev": "ts-node-dev --notify --respawn src/index.ts",
+    "build": "rm -rf dist && rollup -c && prettier -w dist/.",
+    "dev": "ts-node-dev --compiler-options '{ \"module\": \"commonjs\" }' --notify --respawn src/index.ts --watch src/**/*.ts",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
     "postinstall": "husky install",
