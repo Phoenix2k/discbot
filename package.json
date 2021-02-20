@@ -1,0 +1,27 @@
+{
+  "author": "Niko Pettersen <niko@refinery.fi>",
+  "bugs": {
+    "url": "https://github.com/Phoenix2k/discbot/issues"
+  },
+  "description": "Discord bot based on Discord.js",
+  "homepage": "https://github.com/Phoenix2k/discbot#readme",
+  "keywords": [
+    "bot",
+    "disc",
+    "discord",
+    "node",
+    "typescript"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "discbot",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phoenix2k/discbot.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
+}
