@@ -1,13 +1,17 @@
+import { Consola } from 'consola';
+import { logger } from './logger';
 import { Name } from './types';
 
 export class Discbot {
   public name: Name;
+  protected readonly logger: Consola;
   constructor(name: string) {
     this.name = name;
+    this.logger = logger;
   }
 
   init(): void {
-    console.log(this.name, 'initialized.');
+    this.logger.success(this.name, 'initialized.');
     return;
   }
 }
