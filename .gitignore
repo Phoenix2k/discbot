@@ -1,0 +1,9 @@
+# Dot files
+.*
+
+# Node
+node_modules
+
+# Exceptions
+!.editorconfig
+!.gitignore
