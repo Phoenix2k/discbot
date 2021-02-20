@@ -1,6 +1,9 @@
 # Dot files
 .*
 
+# Jest
+coverage
+
 # Node
 node_modules
 
