@@ -4,6 +4,9 @@
 # Node
 node_modules
 
+# TypeScript
+dist
+
 # Exceptions
 !.editorconfig
 !.gitignore
