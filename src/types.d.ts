@@ -1,1 +1,3 @@
-export type Name = string;
+export type BotName = string | undefined;
+
+export type BotToken = string | undefined;

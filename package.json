@@ -17,7 +17,8 @@
     "url": "https://github.com/Phoenix2k/discbot/issues"
   },
   "dependencies": {
-    "consola": "^2.15.3"
+    "consola": "^2.15.3",
+    "dotenv": "^8.2.0"
   },
   "description": "Discord bot based on Discord.js",
   "devDependencies": {
@@ -74,6 +75,9 @@
       }
     },
     "preset": "ts-jest",
+    "setupFiles": [
+      "dotenv/config"
+    ],
     "testEnvironment": "node",
     "transform": {
       "^.+\\.ts$": "ts-jest"
@@ -115,7 +119,8 @@
     "pre-commit": "lint-staged",
     "pre-push": "npm run lint && npm test",
     "start": "node dist/index.mjs",
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "test:clear-cache": "jest --clearCache"
   },
   "type": "module",
   "version": "0.1.0"
