@@ -12,7 +12,7 @@ dist
 
 # Exceptions
 !.editorconfig
-!.env.example
+!.env.json
 !.gitignore
 !.husky
 !.nvmrc
