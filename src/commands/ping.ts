@@ -3,7 +3,7 @@ import { logSuccess } from '../utils/logger';
 
 async function commandPing(message: Discord.Message): Promise<void> {
   const timeTaken = message.createdTimestamp - Date.now();
-  const replyMessage = `Still here 👋 Took me *${timeTaken}* ms to react.`;
+  const replyMessage = `Discbot version **${process.env.npm_package_version}** | Response time **${timeTaken}** ms`;
   const response = await message.reply(replyMessage);
   return logSuccess({ message, replyMessage, response });
 }
