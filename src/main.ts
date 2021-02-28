@@ -30,9 +30,11 @@ export class Discbot {
       logger.info('Using token:', scrambledToken);
     }
     try {
+      this.client.on('debug', (message) => logger.debug(message));
       this.client.on('error', (error) => logger.error(error));
       this.client.on('message', (message) => this.onMessage(message));
       this.client.on('ready', () => this.onReady());
+      this.client.on('warn', (message) => logger.warn(message));
       this.client.login(this.token);
     } catch (error) {
       logger.error('Unable to start up 🔥');
