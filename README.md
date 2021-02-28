@@ -2,6 +2,8 @@
 
 > Discord bot based on [Discord.js](https://discord.js.org/) and [TypeScript](https://www.typescriptlang.org/).
 
+[![Workflow status][workflow-status]][workflow-summary]
+
 ## Requirements
 
 * [Discord account](https://discord.com/login)
@@ -92,3 +94,6 @@ $ npm start
 ## License
 
 [![MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE.md)
+
+[workflow-status]: https://github.com/Phoenix2k/discbot/actions/workflows/default.yml/badge.svg
+[workflow-summary]: https://github.com/Phoenix2k/discbot/actions/workflows/default.yml

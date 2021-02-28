@@ -13,6 +13,7 @@ dist
 # Exceptions
 !.editorconfig
 !.env.json
+!.github
 !.gitignore
 !.husky
 !.nvmrc
