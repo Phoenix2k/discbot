@@ -1,0 +1,7 @@
+{
+  "ping": "Discbot versio **{{version}}** | Vasteaika **{{timeTaken}}** ms",
+  "sum": {
+    "error": "Oikea muoto on **!sum 1 2 3**.",
+    "success": "Se tekee yhteensä **{{sum}}**"
+  }
+}
