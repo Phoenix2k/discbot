@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import { Consola } from 'consola';
 import Discord from 'discord.js';
 import { doCommand } from './commands';
 import { BotName, BotToken } from './types';
@@ -9,7 +8,6 @@ import { parseMessage } from './utils/parsers';
 export class Discbot {
   readonly client: Discord.Client = new Discord.Client();
   readonly commandPrefix: string = '!';
-  readonly logger: Consola = logger;
   readonly name: BotName;
   readonly token: BotToken;
 
@@ -29,15 +27,15 @@ export class Discbot {
       const scrambledToken =
         this.token.substr(0, 4) +
         this.token.substr(4, this.token.length).replace(/./g, 'ˣ');
-      this.logger.info('Using token:', scrambledToken);
+      logger.info('Using token:', scrambledToken);
     }
     try {
-      this.client.on('error', (error) => this.logger.error(error));
+      this.client.on('error', (error) => logger.error(error));
       this.client.on('message', (message) => this.onMessage(message));
       this.client.on('ready', () => this.onReady());
       this.client.login(this.token);
     } catch (error) {
-      this.logger.error('Unable to start up 🔥');
+      logger.error('Unable to start up 🔥');
       throw error;
     }
   }
@@ -45,7 +43,7 @@ export class Discbot {
   async onMessage(message: Discord.Message): Promise<void> {
     if (message.author.bot) return;
     if (!message.content.startsWith(this.commandPrefix)) return;
-    this.logger.debug(
+    logger.debug(
       'Received command',
       chalk.yellow(message.content),
       'from',
@@ -58,7 +56,7 @@ export class Discbot {
   }
 
   onReady(): void {
-    this.logger.success(`Logged in as ${this.client?.user?.tag}`);
-    this.logger.ready(this.name, 'initialized!');
+    logger.success(`Logged in as ${this.client?.user?.tag}`);
+    logger.ready(this.name, 'initialized!');
   }
 }
