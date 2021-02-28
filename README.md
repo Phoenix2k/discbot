@@ -2,7 +2,7 @@
 
 > Discord bot based on [Discord.js](https://discord.js.org/) and [TypeScript](https://www.typescriptlang.org/).
 
-[![Workflow status][workflow-status]][workflow-summary]
+[![Workflow status][workflow-status]][workflow-summary] ![Current version][current-version]
 
 ## Requirements
 
@@ -10,6 +10,10 @@
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)
 * [Node Version Manager](https://github.com/nvm-sh/nvm)
+
+## Optional
+
+* [Personal access token][personal-access-token] from GitHub for creating new releases
 
 ## Discord application
 
@@ -86,6 +90,18 @@ Start an instance:
 $ npm start
 ```
 
+## Release
+
+Create a new release:
+
+```sh
+$ npm run release
+```
+
+> You will need a [personal access token][personal-access-token] from GitHub in order for the the script to be able to create a release on your behalf.
+
+Follow the instructions and use common sense when choosing the version number.
+
 ## Links
 
 * [Discord.js guide](https://discordjs.guide/)
@@ -93,7 +109,9 @@ $ npm start
 
 ## License
 
-[![MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE.md)
+[![MIT](https://img.shields.io/github/license/Phoenix2k/discbot)](LICENSE.md)
 
+[current-version]: https://img.shields.io/badge/dynamic/json?color=informational&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FPhoenix2k%2Fdiscbot%2Fmain%2Fpackage.json
+[personal-access-token]: https://github.com/settings/tokens/new?scopes=repo&description=discbot
 [workflow-status]: https://github.com/Phoenix2k/discbot/actions/workflows/default.yml/badge.svg
 [workflow-summary]: https://github.com/Phoenix2k/discbot/actions/workflows/default.yml

@@ -7,6 +7,9 @@ coverage
 # Node
 node_modules
 
+# Release
+release
+
 # TypeScript
 dist
 

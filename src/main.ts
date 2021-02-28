@@ -36,7 +36,6 @@ export class Discbot {
       this.client.on('message', (message) => this.onMessage(message));
       this.client.on('ready', () => this.onReady());
       this.client.login(this.token);
-      this.logger.ready(this.name, 'initialized.');
     } catch (error) {
       this.logger.error('Unable to start up 🔥');
       throw error;
@@ -59,6 +58,7 @@ export class Discbot {
   }
 
   onReady(): void {
-    this.logger.success(`Logged in as ${this.client?.user?.tag}!`);
+    this.logger.success(`Logged in as ${this.client?.user?.tag}`);
+    this.logger.ready(this.name, 'initialized!');
   }
 }
