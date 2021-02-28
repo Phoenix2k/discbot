@@ -19,7 +19,8 @@
   "dependencies": {
     "consola": "^2.15.3",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "i18next": "^19.9.0"
   },
   "description": "Discord bot based on Discord.js",
   "devDependencies": {
