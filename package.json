@@ -158,7 +158,8 @@
   },
   "scripts": {
     "build": "rm -rf dist && rollup -c && prettier --loglevel silent --write dist/.",
-    "dev": "clear && (cat logo.ascii) && printf '\n' && ts-node-dev --compiler-options '{ \"module\": \"commonjs\" }' --notify --respawn src/index.ts --watch src/**/*.ts",
+    "dev": "scripts/dev.sh",
+    "dev:debug": "export DEBUG=true && scripts/dev.sh",
     "generate:env": "node --experimental-json-modules --no-warnings scripts/env.mjs",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
@@ -166,7 +167,7 @@
     "pre-commit": "lint-staged",
     "pre-push": "npm run lint && npm test",
     "release": "scripts/release.sh",
-    "start": "clear && (cat logo.ascii) && printf '\n' && node dist/index.mjs",
+    "start": "scripts/start.sh",
     "test": "jest --coverage --verbose",
     "test:ci": "jest --ci --forceExit --silent",
     "test:clear-cache": "jest --clearCache",
