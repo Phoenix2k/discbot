@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import fs from 'fs';
 import inquirer from 'inquirer';
 import path from 'path';
-import defaults from '../.env.json';
+import defaults from './env.json';
 
 /**
  * Merges the default values with user input and
@@ -22,8 +22,17 @@ async function createEnv() {
   console.debug(chalk.whiteBright(fileContents));
   fs.writeFileSync('./.env', fileContents);
 
-  console.info(chalk.green('✔'), 'Environment file successfully created');
-  console.info(chalk.gray(path.resolve('.', chalk.cyan('.env'))), '\n');
+  console.info(
+    chalk.green('✔'),
+    'Environment file successfully created:',
+    chalk.gray(path.resolve('.', chalk.cyan('.env'))),
+    '\n'
+  );
+  console.info(
+    'If you noticed an error, you can edit the file directly or run this script again with',
+    chalk.green('npm run generate:env'),
+    '\n'
+  );
 }
 
 /**
@@ -40,8 +49,13 @@ async function getAnswers() {
     {
       message: 'Discord app token',
       name: 'BOT_TOKEN',
-      type: 'input',
+      type: 'password',
       validate: required
+    },
+    {
+      message: 'GitHub token (optional)',
+      name: 'GITHUB_TOKEN',
+      type: 'input'
     }
   ]);
 }
