@@ -170,5 +170,5 @@
     "zip": "mkdir -p release && zip -r release/discbot.zip dist/**/*"
   },
   "type": "module",
-  "version": "0.1.0"
+  "version": "1.0.0"
 }
