@@ -2,7 +2,7 @@
 import chalk from 'chalk';
 import fs from 'fs';
 import inquirer from 'inquirer';
-import * as path from 'path';
+import path from 'path';
 import defaults from '../.env.json';
 
 /**

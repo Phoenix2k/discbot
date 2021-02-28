@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-import * as path from 'path';
+import path from 'path';
 import { Discbot } from './main';
 
 describe('Discbot class', () => {

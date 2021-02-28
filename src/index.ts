@@ -1,6 +1,8 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import { Discbot } from './main';
 import { BotToken } from './types';
+
+dotenv.config();
 
 const name: BotToken = process.env.BOT_NAME;
 const token: BotToken = process.env.BOT_TOKEN;
