@@ -52,6 +52,14 @@ $ npm run dev
 
 > This will start a local instance at [`http://localhost:3000`](http://localhost:3000). The server will restart automatically when you make changes to the source files and let you know of any errors while you develop.
 
+Debugging mode:
+
+```sh
+$ npm run dev:debug
+```
+
+> This is similar to dev, but will emit more log messages to give you a better understanding of what's going on behind the scenes.
+
 ## Testing
 
 ### Lint files

@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import Discord from 'discord.js';
 import { doCommand } from './commands';
 import { BotName, BotToken } from './types';
+import { isDebug, isDev } from './utils/consts';
 import { logger } from './utils/logger';
 import { parseMessage } from './utils/parsers';
 
@@ -24,13 +25,17 @@ export class Discbot {
     } else if (!this.token) {
       throw new Error('BOT_TOKEN missing from the environment.');
     } else {
-      const scrambledToken =
-        this.token.substr(0, 4) +
-        this.token.substr(4, this.token.length).replace(/./g, 'ˣ');
-      logger.info('Using token:', scrambledToken);
+      logger.info('Environment:', chalk.yellow(isDev ? 'development' : 'production'));
+      if (isDev) {
+        logger.info('Debug mode:', chalk.yellow(isDebug ? 'true' : 'false'));
+        const scrambledToken =
+          this.token.substr(0, 4) +
+          this.token.substr(4, this.token.length).replace(/./g, 'ˣ');
+        logger.info('Using token:', chalk.gray(scrambledToken));
+      }
     }
     try {
-      this.client.on('debug', (message) => logger.debug(message));
+      if (isDebug) this.client.on('debug', (message) => logger.debug(message));
       this.client.on('error', (error) => logger.error(error));
       this.client.on('message', (message) => this.onMessage(message));
       this.client.on('ready', () => this.onReady());
@@ -52,13 +57,15 @@ export class Discbot {
       chalk.blue(message.author.username)
     );
     const { args, command } = parseMessage(message, this.commandPrefix);
-    logger.success('Finished parsing the message.');
-    logger.debug('Args:', args, 'Command:', chalk.yellow(command));
+    if (isDev) {
+      logger.success('Finished parsing the message.');
+      logger.debug('Args:', args, 'Command:', chalk.yellow(command));
+    }
     await doCommand({ args, command, message });
   }
 
   onReady(): void {
-    logger.success(`Logged in as ${this.client?.user?.tag}`);
+    logger.success('Logged in as', chalk.blue(this.client?.user?.tag));
     logger.ready(this.name, 'initialized!');
   }
 }

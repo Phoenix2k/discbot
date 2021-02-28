@@ -1,16 +1,20 @@
 import i18next, { InitOptions } from 'i18next';
 import Backend, { i18nextFsBackend } from 'i18next-fs-backend';
 import { join } from 'path';
+import { isDebug } from './consts';
 
 const i18nBackendOptions: i18nextFsBackend.i18nextFsBackendOptions = {
-  addPath: join(__dirname, '../../locales/{{lng}}/{{ns}}.missing.json'),
-  loadPath: join(__dirname, '../../locales/{{lng}}/{{ns}}.json')
+  addPath: join(process.env.PWD || '', '../../locales/{{lng}}/{{ns}}.missing.json'),
+  loadPath: join(process.env.PWD || '', '../../locales/{{lng}}/{{ns}}.json')
 };
 
 const i18nOptions: InitOptions = {
   backend: i18nBackendOptions,
-  debug: true,
+  debug: isDebug,
   defaultNS: 'responses',
+  fallbackLng: {
+    default: ['en']
+  },
   lng: 'fi',
   ns: ['responses']
 };
