@@ -7,5 +7,13 @@
   "sum": {
     "error": "The correct format is **!sum 1 2 3**.",
     "success": "That makes **{{sum}}**"
+  },
+  "unknownCommand": {
+    "embed": {
+      "description": "If you'd like to create a proposal for a new feature, you can submit a new issue on GitHub.",
+      "title": "Create a new feature request",
+      "url": "https://github.com/Phoenix2k/discbot/issues/new?labels=feature+request&template=feature_request.md"
+    },
+    "reply": "I'm not sure what **{{command}}** is supposed to do, but maybe someday in the future I will!"
   }
 }
