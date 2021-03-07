@@ -1,4 +1,8 @@
 {
+  "changeLang": {
+    "error": "Valitse yksi seuraavista kielistä: {{languages}}",
+    "success": "Selvä, vastaan jatkossa suomeksi."
+  },
   "ping": "Discbot versio **{{version}}** | Vasteaika **{{timeTaken}}** ms",
   "sum": {
     "error": "Oikea muoto on **!sum 1 2 3**.",
