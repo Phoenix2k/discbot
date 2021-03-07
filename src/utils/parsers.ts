@@ -1,4 +1,5 @@
 import Discord from 'discord.js';
+import { i18n } from './i18n';
 
 function parseArgs(args: string[]): string[] {
   // Discard empty entries
@@ -13,6 +14,11 @@ function parseBody(body: string, prefix: string): string {
 function parseCommand(args: string[]): string {
   // Return the first command
   return (args.shift() || '').toLowerCase();
+}
+
+function parseLang(args: string[]): string {
+  const potentialLang = (args[0] || '').trim().toLocaleLowerCase();
+  return i18n.languages.includes(potentialLang) ? potentialLang : '';
 }
 
 function parseMessage(
@@ -31,4 +37,4 @@ function parseSum(args: string[]): number {
     .reduce((counter, n) => (counter += n));
 }
 
-export { parseArgs, parseMessage, parseSum };
+export { parseArgs, parseLang, parseMessage, parseSum };
