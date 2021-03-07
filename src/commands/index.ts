@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import Discord from 'discord.js';
 import { logger } from '../utils/logger';
+import { commandLang } from './lang';
 import { commandPing } from './ping';
 import { commandSum } from './sum';
 
@@ -13,6 +14,10 @@ type DoCommandProps = {
 async function doCommand({ args, command, message }: DoCommandProps): Promise<void> {
   let performCommand: null | Promise<void> = null;
   switch (command) {
+    case 'lang': {
+      performCommand = commandLang(args, message);
+      break;
+    }
     case 'ping': {
       performCommand = commandPing(message);
       break;
