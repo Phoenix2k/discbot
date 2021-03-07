@@ -21,6 +21,9 @@ const i18nOptions: InitOptions = {
   fallbackLng: {
     default: ['en', 'fi']
   },
+  interpolation: {
+    escapeValue: false
+  },
   lowerCaseLng: true,
   lng: process.env.BOT_LANG,
   ns: ['responses']
