@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import fs from 'fs';
 import inquirer from 'inquirer';
 import path from 'path';
-import defaults from './env.json';
+import defaults from '../src/data/env.json';
 
 /**
  * Merges the default values with user input and
