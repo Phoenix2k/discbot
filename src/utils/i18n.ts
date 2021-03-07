@@ -1,11 +1,14 @@
+import dotenv from 'dotenv';
 import i18next, { InitOptions } from 'i18next';
 import Backend, { i18nextFsBackend } from 'i18next-fs-backend';
 import { join } from 'path';
 import { isDebug } from './consts';
 
+dotenv.config();
+
 const i18nBackendOptions: i18nextFsBackend.i18nextFsBackendOptions = {
-  addPath: join(process.env.PWD || '', '../../locales/{{lng}}/{{ns}}.missing.json'),
-  loadPath: join(process.env.PWD || '', '../../locales/{{lng}}/{{ns}}.json')
+  addPath: join(process.env.PWD || '', '/locales/{{lng}}/{{ns}}.missing.json'),
+  loadPath: join(process.env.PWD || '', '/locales/{{lng}}/{{ns}}.json')
 };
 
 const i18nOptions: InitOptions = {
@@ -13,9 +16,10 @@ const i18nOptions: InitOptions = {
   debug: isDebug,
   defaultNS: 'responses',
   fallbackLng: {
-    default: ['en']
+    default: ['en', 'fi']
   },
-  lng: 'fi',
+  lowerCaseLng: true,
+  lng: process.env.BOT_LANG,
   ns: ['responses']
 };
 
