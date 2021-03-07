@@ -4,6 +4,7 @@ import { logger } from '../utils/logger';
 import { commandLang } from './lang';
 import { commandPing } from './ping';
 import { commandSum } from './sum';
+import { commandUnknown } from './unknown';
 
 type DoCommandProps = {
   args: string[];
@@ -28,7 +29,7 @@ async function doCommand({ args, command, message }: DoCommandProps): Promise<vo
     }
     default:
       logger.warn('No command specified for', chalk.yellow(command));
-      return;
+      performCommand = commandUnknown(command, message);
   }
   logger.info('Performing', chalk.yellow(command), 'command …');
   return performCommand;
