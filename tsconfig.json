@@ -17,6 +17,7 @@
     "noImplicitThis": true,
     "outDir": "./dist",
     "removeComments": true,
+    "resolveJsonModule": true,
     "rootDir": "./src",
     "skipLibCheck": false,
     "sourceMap": true,
@@ -28,6 +29,6 @@
     "target": "ESNext",
     "types": ["jest", "node"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "include": ["src/**/*"]
 }
