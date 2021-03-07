@@ -5,6 +5,17 @@ import inquirer from 'inquirer';
 import path from 'path';
 import defaults from '../src/data/env.json';
 
+const langChoices = [
+  {
+    name: 'English / English',
+    value: 'en'
+  },
+  {
+    name: 'Finnish / Suomi',
+    value: 'fi'
+  }
+];
+
 /**
  * Merges the default values with user input and
  * creates an `.env` file based on the result.
@@ -41,6 +52,13 @@ async function createEnv() {
 async function getAnswers() {
   return inquirer.prompt([
     {
+      choices: langChoices,
+      message: 'Choose a language for the bot',
+      name: 'BOT_LANG',
+      type: 'list',
+      validate: required
+    },
+    {
       message: 'Bot name',
       name: 'BOT_NAME',
       type: 'input',
@@ -53,9 +71,9 @@ async function getAnswers() {
       validate: required
     },
     {
-      message: 'GitHub token (optional)',
+      message: 'GitHub token for creating releases (optional)',
       name: 'GITHUB_TOKEN',
-      type: 'input'
+      type: 'password'
     }
   ]);
 }
