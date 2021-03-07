@@ -14,6 +14,6 @@
       "title": "Luo uusi ehdotus",
       "url": "https://github.com/Phoenix2k/discbot/issues/new?labels=feature+request&template=feature_request.md"
     },
-    "reply": "En ole varma mitä {{command}} on tarkoitus tehdä, mutta ehkä joskus tulevaisuudessa tiedän!"
+    "reply": "En ole varma mitä **{{command}}** on tarkoitus tehdä, mutta ehkä joskus tulevaisuudessa tiedän!"
   }
 }

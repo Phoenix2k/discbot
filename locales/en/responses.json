@@ -14,6 +14,6 @@
       "title": "Create a new feature request",
       "url": "https://github.com/Phoenix2k/discbot/issues/new?labels=feature+request&template=feature_request.md"
     },
-    "reply": "I'm not sure what {{command}} is supposed to do, but maybe someday in the future I will!"
+    "reply": "I'm not sure what **{{command}}** is supposed to do, but maybe someday in the future I will!"
   }
 }
