@@ -164,8 +164,6 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
     "postinstall": "husky install && test ! -f .env && npm run generate:env || echo",
-    "pre-commit": "lint-staged",
-    "pre-push": "npm run lint && npm test",
     "release": "scripts/release.sh",
     "start": "scripts/start.sh",
     "test": "jest --coverage --verbose",

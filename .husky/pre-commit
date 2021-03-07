@@ -1,2 +1,4 @@
-# Commands to run before committing files to Git
-npm run pre-commit
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no-install lint-staged
