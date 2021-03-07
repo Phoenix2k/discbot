@@ -1,4 +1,8 @@
 {
+  "changeLang": {
+    "error": "Select one of the following languages: {{languages}}",
+    "success": "Okay, I'll answer in English from now on."
+  },
   "ping": "Discbot version **{{version}}** | Response time **{{timeTaken}}** ms",
   "sum": {
     "error": "The correct format is **!sum 1 2 3**.",
