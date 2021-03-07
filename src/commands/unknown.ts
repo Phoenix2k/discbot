@@ -6,8 +6,8 @@ async function commandUnknown(command: string, message: Discord.Message): Promis
   const replyMessage = i18n.t('responses:unknownCommand.reply', { command });
   const embed = new MessageEmbed()
     .setDescription(i18n.t('responses:unknownCommand.embed.description'))
-    .setTitle(i18n.t('responses:unknownCommand.embed.title'))
-    .setURL(i18n.t('responses:unknownCommand.embed.url'));
+    .setTitle(i18n.t('responses:unknownCommand.embed.title', { command }))
+    .setURL(i18n.t('responses:unknownCommand.embed.url', { command }));
 
   const response = await message.reply(replyMessage);
   await message.channel.send({ embed });
