@@ -1,20 +1,35 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest an idea for this bot
 title: ''
-labels: ''
+labels: 'feature request'
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+Short description of what this thing is supposed to do.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## Command
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+How is this feature supposed to be triggered?
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+```
+!command something something-else
+```
+
+## Arguments
+
+List any arguments the command is supposed to take in and what they're supposed to do.
+
+| Argument       | Explanation            |
+|:---------------|:-----------------------|
+| something      | X to fetch from Y      |
+| something-else | Determines what Z does |
+
+## Output
+
+What is the bot supposed to reply?
+
+## Inspiration
+
+Got any links to existing projects featuring the same type of functionality?
