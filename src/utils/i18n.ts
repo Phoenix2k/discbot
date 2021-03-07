@@ -1,8 +1,11 @@
+import chalk from 'chalk';
 import dotenv from 'dotenv';
 import i18next, { InitOptions } from 'i18next';
 import Backend, { i18nextFsBackend } from 'i18next-fs-backend';
 import { join } from 'path';
 import { isDebug } from './consts';
+import { updateEnv } from './env';
+import { logger } from './logger';
 
 dotenv.config();
 
@@ -27,4 +30,13 @@ i18next.use(Backend).init(i18nOptions);
 
 const i18n = i18next;
 
-export { i18n };
+i18n.on('languageChanged', (lang) => {
+  logger.info('Language changed to:', chalk.yellow(lang));
+  updateEnv('BOT_LANG', lang);
+});
+
+async function changeLanguage(lang: string): Promise<void> {
+  await i18n.changeLanguage(lang);
+}
+
+export { changeLanguage, i18n };
