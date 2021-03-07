@@ -1,3 +1,4 @@
+import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
 
 export default [
@@ -15,7 +16,7 @@ export default [
     output: [
       { dir: 'dist', format: 'esm', entryFileNames: '[name].mjs', sourcemap: true }
     ],
-    plugins: [typescript({ sourceMap: false })],
+    plugins: [json(), typescript({ sourceMap: false })],
     preserveModules: true
   }
 ];
