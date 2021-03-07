@@ -29,7 +29,7 @@ async function doCommand({ args, command, message }: DoCommandProps): Promise<vo
     }
     default:
       logger.warn('No command specified for', chalk.yellow(command));
-      performCommand = commandUnknown(command, message);
+      return commandUnknown(command, message);
   }
   logger.info('Performing', chalk.yellow(command), 'command …');
   return performCommand;
