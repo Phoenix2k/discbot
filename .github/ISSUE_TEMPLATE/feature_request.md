@@ -14,17 +14,17 @@ Short description of what this thing is supposed to do.
 How is this feature supposed to be triggered?
 
 ```
-!command something something-else
+!command @username something
 ```
 
 ## Arguments
 
 List any arguments the command is supposed to take in and what they're supposed to do.
 
-| Argument       | Explanation            |
-|:---------------|:-----------------------|
-| something      | X to fetch from Y      |
-| something-else | Determines what Z does |
+| Argument  | Explanation                |
+|:----------|:---------------------------|
+| @username | Username                   |
+| something | Does something to the user |
 
 ## Output
 

@@ -9,7 +9,7 @@ assignees: ''
 
 ## Description
 
-A clear and concise description of what the bug is.
+Description of what the bug is.
 
 ## Steps to reproduce
 
@@ -20,7 +20,7 @@ A clear and concise description of what the bug is.
 
 ## Expected behavior
 
-A clear and concise description of what you expected to happen.
+Description of what you expected to happen.
 
 ## Screenshots
 

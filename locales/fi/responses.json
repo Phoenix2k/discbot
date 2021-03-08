@@ -12,7 +12,7 @@
     "embed": {
       "description": "Jos haluat tehdä ehdotuksen tulevasta featuresta, voit luoda sille issuen GitHubissa.",
       "title": "Luo uusi ehdotus komennolle \"{{command}}\"",
-      "url": "https://github.com/Phoenix2k/discbot/issues/new?labels=feature+request&template=feature_request.md&title=New%20command:%20{{command}}"
+      "url": "https://github.com/Phoenix2k/discbot/issues/"
     },
     "reply": "En ole varma mitä **{{command}}** on tarkoitus tehdä, mutta ehkä joskus tulevaisuudessa tiedän!"
   }
