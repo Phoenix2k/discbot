@@ -112,8 +112,12 @@ Follow the instructions and use common sense when choosing the version number.
 
 ## Links
 
-* [Discord.js guide](https://discordjs.guide/)
+* [Consola documentation](https://github.com/unjsio/consola)
+* [Discord.js guide](https://discordjs.guide)
 * [How To Build a Discord Bot with Node.js](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js)
+* [i18next documentation](https://www.i18next.com)
+* [Node.js documentation](https://nodejs.org/en/docs)
+* [TypeScript documentation](https://www.typescriptlang.org)
 
 ## License
 
