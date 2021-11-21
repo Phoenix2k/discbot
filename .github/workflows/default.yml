@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [15.x]
+        node: [16.x]
         os: [ubuntu-latest]
 
     steps:
