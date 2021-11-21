@@ -11,7 +11,7 @@ async function commandUnknown(command: string, message: Discord.Message): Promis
     .setURL(i18n.t('responses:unknownCommand.embed.url', { command }));
 
   const response = await message.reply(replyMessage);
-  await message.channel.send({ embed });
+  await message.channel.send({ embeds: [embed] });
   return logSuccess({ message, replyMessage, response });
 }
 

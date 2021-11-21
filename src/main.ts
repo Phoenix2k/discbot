@@ -7,7 +7,9 @@ import { logger } from './utils/logger';
 import { parseMessage } from './utils/parsers';
 
 export class Discbot {
-  readonly client: Discord.Client = new Discord.Client();
+  readonly client: Discord.Client = new Discord.Client({
+    intents: ['GUILDS', 'GUILD_MESSAGES']
+  });
   readonly commandPrefix: string = '!';
   readonly name: BotName;
   readonly token: BotToken;
